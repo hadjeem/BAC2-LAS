@@ -1,6 +1,6 @@
 CFLAGS=-std=c11 -pedantic -Wall -Wvla -Werror -D_DEFAULT_SOURCE
 
-PROGS= ex1 lireEtEcrire
+PROGS= ex1 lireEtEcrire lire
 
 ALL: $(PROGS)
 
@@ -15,6 +15,12 @@ lireEtEcrire: lireEtEcrire.o utils_v1.o
 
 lireEtEcrire.o: lireEtEcrire.c ../utils_v1.h
 	gcc $(CFLAGS) -c lireEtEcrire.c
+
+lire: lire.o utils_v1.o
+	gcc $(CFLAGS) -o lire lire.o utils_v1.o
+
+lire.o: lire.c ../utils_v1.h
+	gcc $(CFLAGS) -c lire.c
     
 utils_v1.o: ../utils_v1.h ../utils_v1.c
 	gcc $(CFLAGS) -c ../utils_v1.c
