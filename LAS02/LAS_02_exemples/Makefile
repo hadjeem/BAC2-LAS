@@ -28,8 +28,8 @@ exemple5: exemple5.o utils_v1.o
 exemple5.o: exemple5.c ../../utils_v1.h
 	gcc $(CFLAGS) -c exemple5.c
 
-utils_v1.o: utils_v1.c utils_v1.h
-	gcc $(CFLAGS) -c utils_v1.c
+utils_v1.o: ../../utils_v1.c ../../utils_v1.h
+	gcc $(CFLAGS) -c ../../utils_v1.c
 
 clean:
 	rm -f *.o
