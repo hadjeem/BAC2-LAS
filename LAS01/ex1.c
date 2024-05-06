@@ -60,7 +60,7 @@ void test_write_with_fwrite(char * output_filename, int number_of_iterations)
 void test_write_with_write(char * output_filename, int number_of_iterations)
 {
     int fd, nbCharWrite, ret;
-    fd = open(output_filename, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    fd = open(output_filename, O_WRONLY | O_CREAT | O_TRUNC, 0644); // O_TRUNC : truncate the file to 0 size
     if (fd == -1) {
         perror("Erreur lors de l'ouverture du fichier.\n");
         exit(10);
@@ -83,7 +83,7 @@ void test_write_with_write(char * output_filename, int number_of_iterations)
 
 void usage()
 {
-    fprintf(stderr,"Usage : time ./ex1 fwrite\n \ttime ./ex1 write\n");
+    fprintf(stderr,"Usage : time ./ex1 fwrite\n \ttime ./ex1 write\n"); // fprintf = printf but to stderr and stderr = standard error
     exit(EXIT_FAILURE);
 }
 
